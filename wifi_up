@@ -1,0 +1,4 @@
+#!/bin/ash
+
+echo "`date +%F' '%T` wifi up" >> /root/wifi.log
+wifi up

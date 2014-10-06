@@ -1,0 +1,17 @@
+#!/bin/ash
+
+
+c=0
+maclist=`iw dev wlan0 station dump | grep Station | cut -f 2 -s -d" "`
+for mac in $maclist
+do
+	let c+=1
+done
+
+if [ $c -eq 0 ]
+then
+	echo "`date +%F' '%T` wifi down" >> /root/wifi.log
+	wifi down
+else
+	echo "`date +%F' '%T` Connected $c clients. Wifi not down" >> /root/wifi.log
+fi

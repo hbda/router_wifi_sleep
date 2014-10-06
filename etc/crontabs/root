@@ -1,0 +1,2 @@
+0 1-5 * * * /root/wifi_down
+0 6 * * * /root/wifi_up
